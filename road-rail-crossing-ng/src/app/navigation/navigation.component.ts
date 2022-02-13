@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  constructor() { }
+  public isHome;
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  newLevelCrossing() {
+    this.isHome = false;
+    this.router.navigate(['/new-level-crossing']);
+  }
+
+  home() {
+    this.isHome = true;
+    this.router.navigate(['/']);
+  }
 }

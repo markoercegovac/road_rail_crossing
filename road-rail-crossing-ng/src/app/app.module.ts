@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavigationComponent } from './navigation/navigation.component';
+import { NewRoadRailCrossingComponent } from './new-road-rail-crossing/new-road-rail-crossing.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    NewRoadRailCrossingComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

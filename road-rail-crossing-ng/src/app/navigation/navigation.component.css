@@ -1,0 +1,5 @@
+.image{
+    height:50em; background-size:cover; width:auto;
+    background-image:url('src/assets/Pružni_prelaz_Šabac.jpg');
+    background-position:50% 50%;
+}
