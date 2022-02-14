@@ -4,7 +4,7 @@ import {NewRoadRailCrossingComponent} from "./new-road-rail-crossing/new-road-ra
 
 
 const routes: Routes = [
-  {path: 'new-level-crossing', component: NewRoadRailCrossingComponent}
+  {path: 'new-road-rail-crossing', component: NewRoadRailCrossingComponent}
 ];
 
 @NgModule({

@@ -16,11 +16,11 @@ export class NavigationComponent implements OnInit {
 
   newLevelCrossing() {
     this.isHome = false;
-    this.router.navigate(['/new-level-crossing']);
+    this.router.navigate(['/new-road-rail-crossing']);
   }
 
   home() {
     this.isHome = true;
-    this.router.navigate(['/']);
+    this.router.navigate(['']);
   }
 }
