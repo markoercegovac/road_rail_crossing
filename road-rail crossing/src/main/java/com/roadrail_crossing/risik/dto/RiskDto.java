@@ -10,8 +10,6 @@ public class RiskDto {
 	private String railName;
 	private String roadName;
 	private String safetyLevel;
-	private Double mediumVelocityOfVehicle;
-	private Double mediumVelocityOfTrain;
 	private Double reliability;
 	private Double risk;
 }

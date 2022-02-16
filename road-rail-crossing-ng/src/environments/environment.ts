@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  risk : 'http://localhost:9090/api/risk',
   road_rail_crossing : 'http://localhost:9090/api/road-rail-crossing'
 };
 

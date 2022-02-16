@@ -23,4 +23,9 @@ export class NavigationComponent implements OnInit {
     this.isHome = true;
     this.router.navigate(['']);
   }
+
+  showRiskPage() {
+      this.isHome = false;
+      this.router.navigate(['/risk']);
+  }
 }

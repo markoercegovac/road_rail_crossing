@@ -20,12 +20,9 @@ public class RoadRailCrossingController {
 	public final static String HOME_URL = "/api/road-rail-crossing";
 
 	private final RoadRailCrossingService service;
-	private final CalculationService calculationService;
 
 	@PostMapping(SAVE_URL)
 	public void save(@RequestBody RoadRailCrossingDto dto){
-//		service.save(dto);
-		List<RiskDto> risks = calculationService.getRiskDtoList();
-		System.out.println("test");
+		service.save(dto);
 	}
 }

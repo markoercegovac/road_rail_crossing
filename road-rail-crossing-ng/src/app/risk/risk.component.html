@@ -1,0 +1,27 @@
+<table mat-table [dataSource]="allRiskData"  matSort class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Naziv pružnog prelaza</th>
+        <td mat-cell *matCellDef="let data">{{data.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="safetyLevel">
+        <th mat-header-cell *matHeaderCellDef >Nivo obezbeđenja putno-pružnog prelaza</th>
+        <td mat-cell *matCellDef="let data">{{data.safetyLevel}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="reliability">
+        <th mat-header-cell *matHeaderCellDef>Pouzdanost</th>
+        <td mat-cell *matCellDef="let data">{{data.reliability}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="risk">
+        <th mat-header-cell mat-sort-header  *matHeaderCellDef class="text-danger text-lg-right">Rizik</th>
+        <td mat-cell *matCellDef="let data" class="text-danger text-lg-right" >{{data.risk}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<br>
+<br>
+<br>

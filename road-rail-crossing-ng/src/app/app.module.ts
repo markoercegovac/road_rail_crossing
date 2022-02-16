@@ -11,13 +11,16 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
+import { RiskComponent } from './risk/risk.component';
+import {MatSortModule} from "@angular/material/sort";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     NewRoadRailCrossingComponent,
-    FooterComponent
+    FooterComponent,
+    RiskComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import {MatTableModule} from "@angular/material/table";
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
+    MatSortModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
