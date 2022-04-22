@@ -19,4 +19,17 @@ public class RoadRailCrossingServiceImpl implements RoadRailCrossingService {
 		RoadRailCrossing roadRailCrossing = conversionService.convert(dto, RoadRailCrossing.class);
 		repository.save(roadRailCrossing);
 	}
+
+	@Override
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
+	@Override
+	public RoadRailCrossingDto getOne(Long id) {
+		RoadRailCrossing roadRailCrossing = repository.findById(id).get();
+		return conversionService.convert(roadRailCrossing,RoadRailCrossingDto.class);
+	}
+
+
 }

@@ -12,4 +12,5 @@ public class RiskDto {
 	private String safetyLevel;
 	private Double reliability;
 	private Double risk;
+	private Long roadRailCrossingId;
 }

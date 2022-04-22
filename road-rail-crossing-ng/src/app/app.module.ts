@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import { RiskComponent } from './risk/risk.component';
 import {MatSortModule} from "@angular/material/sort";
+import { EditRoadRailCrossingComponent } from './edit-road-rail-crossing/edit-road-rail-crossing.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatSortModule} from "@angular/material/sort";
     NavigationComponent,
     NewRoadRailCrossingComponent,
     FooterComponent,
-    RiskComponent
+    RiskComponent,
+    EditRoadRailCrossingComponent
   ],
   imports: [
     BrowserModule,

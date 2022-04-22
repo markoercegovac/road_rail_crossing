@@ -29,6 +29,4 @@ public class RiskController {
 	public ResponseEntity<List<RiskDto>> getAllRiskData(){
 		return new ResponseEntity<>(calculationService.getRiskDtoList(), HttpStatus.OK);
 	}
-
-
 }

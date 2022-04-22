@@ -53,7 +53,9 @@ export class NewRoadRailCrossingComponent implements OnInit {
         numberOfYearsOfAccidents: form.value.numberOfYearsOfAccidents,
         totalNumberOfAccidents: form.value.totalNumberOfAccidents
       };
-      this.service.save(newRoadRailCrossing).subscribe();
+      this.service.save(newRoadRailCrossing).subscribe(
+          (data) => location.reload()
+      );
     }
   }
 

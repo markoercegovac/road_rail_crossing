@@ -1,0 +1,116 @@
+<div class="w3-main" >
+    <div class="row">
+        <div class="offset-3"></div>
+        <div class="col-md-6">
+            <form [formGroup]="newForm"  (ngSubmit)="createNewRoadRailCrossing(newForm)" >
+                <div>
+                    <h4><b>Putno-pružni prelaz </b>
+                        <i class="fa fa-road"></i></h4>
+                </div>
+                <br>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Naziv/ime putno-pružnog prelaza.</label>
+                    <textarea sanitaze class="form-control" formControlName="name"></textarea>
+                    <small *ngIf="f.name.errors" class="text-danger">Naziv/ime putno-pružnog prelaza je obavezno</small>
+                </div>
+                <br>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Naziv pruge na kojoj se putno-pružni prelaz nalazi sa kilometarskim položajem.</label>
+                    <textarea class="form-control" formControlName="railName"></textarea>
+                    <small *ngIf="f.railName.errors" class="text-danger">Naziv/ime putno-pružnog prelaza je obavezno</small>
+                </div>
+                <br>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Naziv drumske saobraćajnice/puta na kojem se putno-pružni prelaz nalazi.</label>
+                    <textarea class="form-control" formControlName="roadName"></textarea>
+                    <small *ngIf="f.roadName.errors" class="text-danger">Naziv drumske saobraćajnice/puta na kojem se putno-pružni prelaz nalazi je obavezno</small>
+                </div>
+                <br>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Nivo obezbeđenja putno-pružnog prelaza, shodno odredbama Pravilnika o načinu ukrštanja železničke pruge i puta, pešačke ili biciklističke staze, mestu na kojem se može izvesti ukrštanje i merama za osiguranje bezbednog saobraćaja (<b>,,Službeni glasnik RS”, br. 89/2016</b>).</label>
+                    <textarea  class="form-control" formControlName="safetyLevel"></textarea>
+                    <small *ngIf="f.safetyLevel.errors" class="text-danger">Nivo obezbeđenja putno-pružnog prelaza</small>
+                </div>
+                <br>
+                <hr>
+                <div>
+                    <h4><b>Statistički podaci </b>
+                        <i class="fa-solid fa-chart-line"></i></h4>
+                </div>
+                <br>
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Prosečan dnevni intenzitet tokova drumskih vozila (drumskih vozila/dan), <i><b>λc</b></i>.</label>
+                    <input type="number" class="form-control" formControlName="vehiclePerDay">
+                    <small *ngIf="f.vehiclePerDay.errors" class="text-danger">Prosečan dnevni intenzitet tokova drumskih vozila ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Prosečan dnevni intenzitet tokova železničkih vozila (vozova/dan), <i><b>λt</b></i>.</label>
+                    <input type="number" class="form-control" formControlName="trainPerDay">
+                    <small *ngIf="f.trainPerDay.errors" class="text-danger">Prosečan dnevni intenzitet tokova železničkih vozila ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Srednja dužina drumskih vozila <i><b>lc</b></i> (<b>m</b>).</label>
+                    <input type="number" class="form-control" formControlName="mediumLengthOfVehicle">
+                    <small *ngIf="f.mediumLengthOfVehicle.errors" class="text-danger">Srednja dužina drumskih vozila ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Dužina kritičnog rastojanja za drumska vozila, koja je jednaka prosečnoj čeonoj širini voza <i><b>Lc</b></i> (<b>m</b>).</label>
+                    <input type="number" class="form-control" formControlName="criticalDistanceLengthOfVehicle">
+                    <small *ngIf="f.criticalDistanceLengthOfVehicle.errors" class="text-danger">Dužina kritičnog rastojanja za drumska vozila ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Srednja brzina <i><b>vc</b></i> (<b>km/h</b>)  kretanja drumskih vozila preko kritičnog puta <i><b>lc+Lc</b></i>.</label>
+                    <input type="number" class="form-control" formControlName="mediumVelocityOfVehicle">
+                    <small *ngIf="f.mediumVelocityOfVehicle.errors" class="text-danger">Srednja brzina kretanja drumskih vozila  preko kritičnog puta ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Dužina kritičnog rastojanja, koja je jednaka prosečnoj dužini vozova <i><b>lt</b></i> (<b>m</b>).</label>
+                    <input type="number" class="form-control" formControlName="mediumLengthOfTrain">
+                    <small *ngIf="f.mediumLengthOfTrain.errors" class="text-danger">Dužina kritičnog rastojanja ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Dužina kritičnog rastojanja za železnička vozila, koja je jednaka širini putno-pružnog prelaza <i><b>Lt</b></i> (<b>m</b>).</label>
+                    <input type="number" class="form-control" formControlName="criticalDistanceLengthOfTrain">
+                    <small *ngIf="f.criticalDistanceLengthOfTrain.errors" class="text-danger">Dužina kritičnog rastojanja za železnička vozila ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Srednja brzina <i><b>vc</b></i> (<b>km/h</b>)  kretanja železničkog vozila preko kritičnog puta <i><b>lt+Lt</b></i>.</label>
+                    <input type="number" class="form-control" formControlName="mediumVelocityOfTrain">
+                    <small *ngIf="f.mediumVelocityOfTrain.errors" class="text-danger">Srednja brzina  kretanja železničkog vozila preko kritičnog puta ne sme biti negativan broj</small>
+                </div>
+                <br>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Broj godina za koji posmatramo nesreće nezgode (<b>T</b>).</label>
+                    <input type="number" class="form-control" formControlName="numberOfYearsOfAccidents">
+                    <small *ngIf="f.numberOfYearsOfAccidents.errors" class="text-danger">Broj godina za koji posmatramo nesreće nezgode ne sme biti negativan broj</small>
+                </div>
+
+                <div class="form-group" style="margin-top:20px;">
+                    <label>Ukupan broj nesreća/nezgoda u posmatranom broju godina (<i><b>nreal</b></i>).</label>
+                    <input type="number" class="form-control" formControlName="totalNumberOfAccidents">
+                    <small *ngIf="f.totalNumberOfAccidents.errors" class="text-danger">Ukupan broj nesreća/nezgoda u posmatranom broju godina ne sme biti negativan broj</small>
+                </div>
+
+
+                <hr>
+
+
+                <div class="form-group" style="margin-top:20px;">
+                    <input type="submit" class="btn btn-primary float-right" value="Izmeni putno-pružni prelaz" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>

@@ -6,6 +6,8 @@ import com.roadrail_crossing.risik.repository.RoadRailCrossingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,8 +50,10 @@ public class CalculationServiceImpl implements CalculationService{
 		riskDto.setRailName(entity.getRailName());
 		riskDto.setRoadName(entity.getRoadName());
 		riskDto.setSafetyLevel(entity.getSafetyLevel());
-		riskDto.setReliability(reliability);
-		riskDto.setRisk(risk);
+		riskDto.setReliability(getRoundNumber(16, reliability));
+
+		riskDto.setRisk(getRoundNumber(16, risk));
+		riskDto.setRoadRailCrossingId(entity.getId());
 
 		return riskDto;
 	}
@@ -80,5 +84,10 @@ public class CalculationServiceImpl implements CalculationService{
 
 	private Double getReliability(Double pTheory, Double preal){
 		return (pTheory - preal)/pTheory;
+	}
+
+	private Double getRoundNumber(int decimals, Double number){
+		BigDecimal bd = new BigDecimal(number).setScale(decimals,RoundingMode.HALF_EVEN);
+		return bd.doubleValue();
 	}
 }

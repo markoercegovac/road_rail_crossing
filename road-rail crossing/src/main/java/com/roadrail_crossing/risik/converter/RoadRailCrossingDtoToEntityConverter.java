@@ -5,11 +5,14 @@ import com.roadrail_crossing.risik.entity.RoadRailCrossing;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class RoadRailCrossingDtoToEntityConverter implements Converter<RoadRailCrossingDto, RoadRailCrossing> {
 	@Override
 	public RoadRailCrossing convert(RoadRailCrossingDto dto) {
 		RoadRailCrossing entity = new RoadRailCrossing();
+		entity.setId(Objects.isNull(dto.getId()) ? null : dto.getId());
 		entity.setName(dto.getName());
 		entity.setRailName(dto.getRailName());
 		entity.setRoadName(dto.getRoadName());
