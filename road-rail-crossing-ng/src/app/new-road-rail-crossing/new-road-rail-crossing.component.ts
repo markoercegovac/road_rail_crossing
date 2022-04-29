@@ -3,6 +3,7 @@ import {RoadRailCrossing} from "../model/road-rail-crossing";
 import {Form, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {from} from "rxjs";
 import {RoadRailCrossingService} from "../services/road-rail-crossing-service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -14,7 +15,7 @@ export class NewRoadRailCrossingComponent implements OnInit {
 
   newForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private service: RoadRailCrossingService) { }
+  constructor(private formBuilder: FormBuilder, private service: RoadRailCrossingService, private router: Router) { }
 
   ngOnInit(): void {
     this.newForm = this.formBuilder.group({
@@ -22,16 +23,16 @@ export class NewRoadRailCrossingComponent implements OnInit {
       railName: ['', Validators.required],
       roadName: ['', Validators.required],
       safetyLevel: ['', Validators.required],
-      vehiclePerDay: [0, Validators.min(0)],
-      trainPerDay: [0, Validators.min(0)],
-      mediumLengthOfVehicle: [0, Validators.min(0)],
-      criticalDistanceLengthOfVehicle: [0, Validators.min(0)],
-      mediumVelocityOfVehicle: [0, Validators.min(0)],
-      mediumLengthOfTrain: [0, Validators.min(0)],
-      criticalDistanceLengthOfTrain: [0, Validators.min(0)],
-      mediumVelocityOfTrain: [0, Validators.min(0)],
-      numberOfYearsOfAccidents: [0, Validators.min(0)],
-      totalNumberOfAccidents: [0, Validators.min(0)]
+      vehiclePerDay: [0, Validators.min(1)],
+      trainPerDay: [0, Validators.min(1)],
+      mediumLengthOfVehicle: [0, Validators.min(1)],
+      criticalDistanceLengthOfVehicle: [0, Validators.min(1)],
+      mediumVelocityOfVehicle: [0, Validators.min(1)],
+      mediumLengthOfTrain: [0, Validators.min(1)],
+      criticalDistanceLengthOfTrain: [0, Validators.min(1)],
+      mediumVelocityOfTrain: [0, Validators.min(1)],
+      numberOfYearsOfAccidents: [0, Validators.min(1)],
+      totalNumberOfAccidents: [0, Validators.min(1)]
     });
   }
 
@@ -54,7 +55,7 @@ export class NewRoadRailCrossingComponent implements OnInit {
         totalNumberOfAccidents: form.value.totalNumberOfAccidents
       };
       this.service.save(newRoadRailCrossing).subscribe(
-          (data) => location.reload()
+          (data) => this.router.navigateByUrl("/risk")
       );
     }
   }

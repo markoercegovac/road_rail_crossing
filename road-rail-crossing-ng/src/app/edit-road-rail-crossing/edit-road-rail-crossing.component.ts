@@ -33,16 +33,16 @@ export class EditRoadRailCrossingComponent implements OnInit {
             railName: [this.model.railName, Validators.required],
             roadName: [this.model.roadName, Validators.required],
             safetyLevel: [this.model.safetyLevel, Validators.required],
-            vehiclePerDay: [this.model.vehiclePerDay, Validators.min(0)],
-            trainPerDay: [this.model.trainPerDay, Validators.min(0)],
-            mediumLengthOfVehicle: [this.model.mediumLengthOfVehicle, Validators.min(0)],
-            criticalDistanceLengthOfVehicle: [this.model.criticalDistanceLengthOfVehicle, Validators.min(0)],
-            mediumVelocityOfVehicle: [this.model.mediumVelocityOfVehicle, Validators.min(0)],
-            mediumLengthOfTrain: [this.model.mediumLengthOfTrain, Validators.min(0)],
-            criticalDistanceLengthOfTrain: [this.model.criticalDistanceLengthOfTrain, Validators.min(0)],
-            mediumVelocityOfTrain: [this.model.mediumVelocityOfTrain, Validators.min(0)],
-            numberOfYearsOfAccidents: [this.model.numberOfYearsOfAccidents, Validators.min(0)],
-            totalNumberOfAccidents: [this.model.totalNumberOfAccidents, Validators.min(0)]
+            vehiclePerDay: [this.model.vehiclePerDay, Validators.min(1)],
+            trainPerDay: [this.model.trainPerDay, Validators.min(1)],
+            mediumLengthOfVehicle: [this.model.mediumLengthOfVehicle, Validators.min(1)],
+            criticalDistanceLengthOfVehicle: [this.model.criticalDistanceLengthOfVehicle, Validators.min(1)],
+            mediumVelocityOfVehicle: [this.model.mediumVelocityOfVehicle, Validators.min(1)],
+            mediumLengthOfTrain: [this.model.mediumLengthOfTrain, Validators.min(1)],
+            criticalDistanceLengthOfTrain: [this.model.criticalDistanceLengthOfTrain, Validators.min(1)],
+            mediumVelocityOfTrain: [this.model.mediumVelocityOfTrain, Validators.min(1)],
+            numberOfYearsOfAccidents: [this.model.numberOfYearsOfAccidents, Validators.min(1)],
+            totalNumberOfAccidents: [this.model.totalNumberOfAccidents, Validators.min(1)]
           });
         }
     )
