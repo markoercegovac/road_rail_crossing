@@ -20,7 +20,7 @@ public class RoadRailCrossingEntityToDtoConverter implements Converter<RoadRailC
 		dto.setVehiclePerDay(entity.getVehiclePerDay());
 		dto.setTrainPerDay(entity.getTrainPerDay());
 
-		dto.setMediumLengthOfVehicle(entity.getMediumLengthOfTrain());
+		dto.setMediumLengthOfVehicle(entity.getMediumLengthOfVehicle());
 		dto.setCriticalDistanceLengthOfVehicle(entity.getCriticalDistanceLengthOfVehicle());
 		dto.setMediumVelocityOfVehicle(entity.getMediumVelocityOfVehicle());
 
