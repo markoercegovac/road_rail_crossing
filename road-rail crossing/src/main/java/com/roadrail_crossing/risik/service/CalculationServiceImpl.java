@@ -50,9 +50,9 @@ public class CalculationServiceImpl implements CalculationService{
 		riskDto.setRailName(entity.getRailName());
 		riskDto.setRoadName(entity.getRoadName());
 		riskDto.setSafetyLevel(entity.getSafetyLevel());
-		riskDto.setReliability(getRoundNumber(16, reliability));
+		riskDto.setReliability(getRoundNumber(12, reliability));
 
-		riskDto.setRisk(getRoundNumber(16, risk));
+		riskDto.setRisk(getRoundNumber(12, risk));
 		riskDto.setRoadRailCrossingId(entity.getId());
 
 		return riskDto;
