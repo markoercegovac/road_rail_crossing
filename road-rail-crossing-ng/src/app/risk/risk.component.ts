@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {RiskService} from "../services/risk-service";
-import {MatSort, Sort} from "@angular/material/sort";
+import {MatSort, MatSortable, Sort} from "@angular/material/sort";
 import {LiveAnnouncer} from "@angular/cdk/a11y";
 import {MatTableDataSource} from "@angular/material/table";
 import {RoadRailCrossingService} from "../services/road-rail-crossing-service";
@@ -26,6 +26,7 @@ export class RiskComponent implements OnInit {
     this.riskService.getAllRiskData().subscribe(
         data=>{
           this.allRiskData = new MatTableDataSource(data);
+          this.sort.sort(({ id: 'name', start: 'asc'}) as MatSortable);
           this.allRiskData.sort = this.sort;
         }
 
